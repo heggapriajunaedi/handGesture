@@ -65,18 +65,18 @@ def detect_gesture(landmarks):
     return None
 
 
-# --- Program utama ---
+#Program Utama
 cap = cv2.VideoCapture(0)
 
 last_gesture = None
 last_time = 0
 
-# Warna teks untuk tiap gesture
+#Warna teks untuk tiap gesture
 gesture_colors = {
-    "Halo": (255, 0, 0),      # Biru
-    "My Name Is": (0, 255, 0),        # Hijau
-    "Hegga": (0, 165, 255),        # Oranye
-    "Thankyou": (255, 0, 255)     # Ungu
+    "Halo": (255, 255, 0),      #Kuning
+    "My Name Is": (0, 255, 0),        #Hijau
+    "Hegga": (0, 165, 255),        #Oranye
+    "Thankyou": (255, 0, 255)     #Ungu
 }
 
 with mp_hands.Hands(min_detection_confidence=0.7, min_tracking_confidence=0.7) as hands:
@@ -97,7 +97,7 @@ with mp_hands.Hands(min_detection_confidence=0.7, min_tracking_confidence=0.7) a
 
         if gesture:
             text = gesture
-            color = gesture_colors.get(text, (255, 255, 255))  # warna default putih
+            color = gesture_colors.get(text, (255, 255, 255))  #Warna default putih
             font = cv2.FONT_HERSHEY_SIMPLEX
 
             #Posisi teks di pojok kiri atas
